@@ -1,0 +1,49 @@
+<%- include('../includes/header'); %>
+
+  <div class="container">
+    <h2>
+      Semua Mahasiswa
+    </h2>
+    <li><a class="btn btn-primary btn-sm" href="#"
+      onclick="openForm('mhs/create', 'create')">
+        <span class="me-3"> Create</span></a>
+    </li>
+    <table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>NIM</th>
+      <th>Nama</th>
+      <th>Kelas</th>
+      <th>Jenis Kelamin</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% 
+      no = 1
+      mhs.forEach(mhs => { %>
+      <tr>
+        <td><%= no++ %></td>
+        <td><%= mhs.nim %></td>
+        <td><%= mhs.nama %></td>
+        <td><%= mhs.kelas %></td>
+        <td><%= mhs.jenis_kelamin %></td>
+        <td>
+          <a onclick="openForm('/mhs/edit/<%= mhs.nim %>', 'create')">
+            <button class="btn btn-primary">
+              Edit
+            </button>
+          </a>
+          <a href="/mhs/delete/<%= mhs.nim %>">
+            <button class="btn btn-danger">
+              Delete
+            </button>
+          </a>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+</div>
+  <%- include('../includes/footer'); %>
