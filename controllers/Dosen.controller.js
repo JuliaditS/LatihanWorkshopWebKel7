@@ -23,22 +23,22 @@ module.exports = {
   },
 
   edit : async (req,res)  => {
-    const {id} = req.params;
-    const Dosens = await Dosen.findByPk(id);
+    const {nidn} = req.params;
+    const Dosens = await Dosen.findByPk(nidn);
     return res.render('Dosen/edit',{
       Dosens
     })
   },
 
   update : async (req,res) => {
-    const {id} = req.params;
-    const {nidn,nama_dosen,jenis_kelamin} = req.body;
+    const {nidn} = req.params;
+    const {nidn1,nama_dosen,jenis_kelamin} = req.body;
     await Dosen.update({
-        nidn,
+        nidn1,
         nama_dosen,
         jenis_kelamin
     },{
-      where : {id}
+      where : {nidn}
     })
     return res.redirect('/Dosens')
   },

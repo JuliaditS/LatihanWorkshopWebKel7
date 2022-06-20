@@ -1,0 +1,30 @@
+<form action="matkuls/update/<%= matkuls.kode_matkul %>" method="post">
+    <div class="mb-3">
+        <label class="form-label pt-0" for="kode_matkul">Kode Matkul</label>
+        <input class="form-control" id="kode_matkul1" name="kode_matkul1" type="text" value="<%= matkuls.kode_matkul %>" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label pt-0" for="nama_matkul">Nama Matkul</label>
+        <input class="form-control" id="nama_matkul" name="nama_matkul" type="text" value="<%= matkuls.nama_matkul %>" required />
+    </div>
+    <label class="form-label pt-0" for="nidn">NIDN</label>
+    <select class="form-select" aria-label="Default select example" id="nidn" name="nidn">
+        <%
+            Dosens.forEach(Dosens1 => { %>
+            <option value="<%= Dosens1.nidn %>" <% if(matkuls.nidn === Dosens1.nidn){ %> selected="" <% } %>><%= Dosens1.nama_dosen %></option>
+        <% }); %>
+      </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label pt-0" for="nim">NIM</label>
+        <select class="form-select" aria-label="Default select example" id="nim" name="nim">
+            <%
+            mhss.forEach(mhss => { %>
+            <option value="<%= mhss.nim %>" <% if(matkuls.nim === mhss.nim){ %> selected="" <% } %>><%= mhss.nama %></option>
+        <% }); %>
+        </select>
+    </div>
+    <div class="d-flex flex-row-reverse">
+        <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+</form>

@@ -2,37 +2,39 @@
 
   <div class="container">
     <h2>
-      Semua Dosens
+      Semua Mata Kuliah
     </h2>
     <li><a class="btn btn-primary btn-sm" href="#"
-      onclick="openForm('Dosens/create', 'create')">
+      onclick="openForm('matkuls/create', 'create')">
         <span class="me-3"> Create</span></a>
     </li>
     <table class="table">
   <thead>
     <tr>
       <th>#</th>
+      <th>Kode Matkul</th>
+      <th>Nama Matkul</th>
       <th>NIDN</th>
-      <th>Nama Dosen</th>
-      <th>Jenis Kelamin</th>
+      <th>NIM</th>
     </tr>
   </thead>
   <tbody>
     <% 
       no = 1
-      Dosens.forEach(Dosens => { %>
+      matkuls.forEach(matkuls => { %>
       <tr>
         <td><%= no++ %></td>
-        <td><%= Dosens.nidn %></td>
-        <td><%= Dosens.nama_dosen %></td>
-        <td><%= Dosens.jenis_kelamin %></td>
+        <td><%= matkuls.kode_matkul %></td>
+        <td><%= matkuls.nama_matkul %></td>
+        <td><%= matkuls.nidn %></td>
+        <td><%= matkuls.nim %></td>
         <td>
-          <a onclick="openForm('/Dosens/edit/<%= Dosens.nidn %>', 'create')">
+          <a onclick="openForm('/matkuls/edit/<%= matkuls.kode_matkul %>', 'create')">
             <button class="btn btn-primary">
               Edit
             </button>
           </a>
-          <a href="/Dosens/delete/<%= Dosens.nidn %>">
+          <a href="/matkuls/delete/<%= matkuls.kode_matkul %>">
             <button class="btn btn-danger">
               Delete
             </button>

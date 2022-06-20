@@ -12,8 +12,17 @@
         <input class="form-control" id="kelas" name="kelas" type="text" value="<%= mhs.kelas %>" required />
     </div>
     <div class="mb-3">
-        <label class="form-label pt-0" for="jenis_kelamin">Jenis Kelamin</label>
-        <input class="form-control" id="jenis_kelamin" name="jenis_kelamin" type="text" value="<%= mhs.jenis_kelamin %>" required />
+        <label class="form-label pt-0" for="jenis_kelamin">Jenis Kelamin</label><br>
+        <% 
+            if(mhs.jenis_kelamin == "L"){ %>
+        <input class="" id="jenis_kelamin" type="radio" name="jenis_kelamin" value="L" checked> Laki-laki<br>
+        <input class="" id="jenis_kelamin" type="radio" name="jenis_kelamin" value="P" > Perempuan<br>
+        <% 
+            } else { %>
+        <input class="" id="jenis_kelamin" type="radio" name="jenis_kelamin" value="L" > Laki-laki<br>
+        <input class="" id="jenis_kelamin" type="radio" name="jenis_kelamin" value="P" checked> Perempuan<br>
+        <% 
+            } %>
     </div>
     <div class="d-flex flex-row-reverse">
         <button class="btn btn-primary" type="submit">Save</button>
