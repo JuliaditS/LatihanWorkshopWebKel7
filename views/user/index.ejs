@@ -1,0 +1,45 @@
+<%- include('../includes/header'); %>
+
+  <div class="container">
+    <h2>
+      All Users
+    </h2>
+    <li><a class="btn btn-primary btn-sm" href="#"
+      onclick="openForm('users/create', 'create')">
+        <span class="me-3"> Create</span></a>
+    </li>
+    <table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nama</th>
+      <th>Password</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% 
+      no = 1
+      users.forEach(users => { %>
+      <tr>
+        <td><%= no++ %></td>
+        <td><%= users.nama %></td>
+        <td><%= users.password %></td>
+        <td>
+          <a onclick="openForm('/users/edit/<%= users.id %>', 'create')">
+            <button class="btn btn-primary">
+              Edit
+            </button>
+          </a>
+          <a href="/users/delete/<%= users.id %>">
+            <button class="btn btn-danger">
+              Delete
+            </button>
+          </a>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+</div>
+  <%- include('../includes/footer'); %>
