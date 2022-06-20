@@ -3,7 +3,7 @@ module.exports = {
   database: {
     host: '127.0.0.1',
     username: 'root',
-    password: null,
-    database: 'latihan'
+    password: 'I54n21lkjh',
+    database: 'jadwal_mhs'
   }
 }

@@ -1,6 +1,8 @@
 const indexController = require('../controllers/index.controller');
 const postController = require('../controllers/post.controller');
 const userController = require('../controllers/user.controller');
+const DosenController = require('../controllers/Dosen.controller');
+
 const auth = require('../middlewares/auth');
 
 const router = require('express').Router();
@@ -22,3 +24,9 @@ router.get('/users/edit/:id', userController.edit);
 router.post('/users/update/:id', userController.update);
 router.get('/users/delete/:id', userController.delete);
 module.exports = router;
+
+//Dosen
+router.get('/Dosens', DosenController.index);
+router.get('/Dosens/create', DosenController.create);
+router.post('/Dosens/store', DosenController.store);
+router.get('/Dosens/delete/:nidn', DosenController.delete);
